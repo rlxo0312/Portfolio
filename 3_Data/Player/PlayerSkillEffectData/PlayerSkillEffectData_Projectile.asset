@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c194b2cd5af81fe43865413fc3f2fe79, type: 3}
+  m_Name: PlayerSkillEffectData_Projectile
+  m_EditorClassIdentifier: 
+  skillEffect: {fileID: 9129737292496376666, guid: e62543378d48e0f468ff007dabec5d09,
+    type: 3}
+  skillEffectPos: {x: 0.8, y: 2.5, z: -8}
+  skillRotation: {x: 0, y: 0, z: 0}
+  skillEffectTransform: {fileID: 0}
+  useWeaponTransform: 0
+  useShieldTransform: 0
+  useBodyTransform: 0
+  useRightHandTransform: 0
+  useLeftHandTransform: 0
+  isAttackTrigger: 0
+  AttackTriggerStartDuration: 0
+  isProjectile: 1
+  projectileSpeed: 20
+  projectileLifeTime: 2
+  effectPoolKey: Slash
+  playerSkillEffectStartDelay: 0.2
+  skillEffectDuration: 4
+  skillEffectCount: 1

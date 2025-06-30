@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4105f942078337a45b81d555e0c1238d, type: 3}
+  m_Name: PlayerSkillData_Projectile
+  m_EditorClassIdentifier: 
+  skillName: "\uAC80\uAE30 \uBC29\uCD9C"
+  skillSprite: {fileID: 21300000, guid: 3925691c2a021aa429c1dc89712a1253, type: 3}
+  skillComent: "10\uC758 \uB9C8\uB098\uB97C \uC18C\uBAA8\uD558\uC5EC \uAC80\uAE30\uB97C
+    \uBC29\uCD9C\uD558\uC5EC \uB300\uC0C1\uC5D0\uAC8C \uACF5\uACA9\uB825\uC758 \uB450
+    \uBC30\uC5D0 \uD574\uB2F9\uD558\uB294 \uB300\uBBF8\uC9C0\uB97C \uC785\uD78C\uB2E4."
+  skillAnimationClip: {fileID: -203655887218126122, guid: 066044ca79a8d7e479e3e70843d5ba38,
+    type: 3}
+  animationTriggerName: PlayerSkill_RelaseProjectile
+  playerBonusAttackPower: 0
+  playerBonusDefense: 0
+  playerAttackSkillDuration: 0
+  playerDefenseSkillDuration: 0
+  playerAttackSkillMagnification: 2
+  playerAttackSkillMagnificationDuration: 2
+  DebuffMonsterAttack: 0
+  DebuffMonsterDefense: 0
+  DebuffMonsterDuration: 0
+  DebuffMonsterStartDuration: 0
+  skillColldown: 13
+  isUsedOneTime: 0
+  changePlayerBoxSize: {x: 0, y: 0, z: 0}
+  returnTime: 0
+  playerBoxSizeStartDelay: 0
+  changePlayerBoxCenter: {x: 0, y: 0, z: 0}
+  skillEffectDatas:
+  - {fileID: 11400000, guid: c8a3795cff3fc544e8ac383dcb725f94, type: 2}
+  isInvincibility: 0
+  invincibilityDuration: 0
+  isHeal: 0
+  healAmount: 0
+  healStartDuration: 0
+  targetCount: 5
+  targetCountDuration: 2
+  isUseMP: 1
+  useMPAmount: 10
