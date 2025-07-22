@@ -29,3 +29,8 @@ MonoBehaviour:
   MaxMP: 100
   AttackPower: 30
   Defense: 10
+  defaultSpeed: 5
+  runSpeed: 70
+  jumpForce: 20
+  backSpeed: 3
+  fastBackSpeed: 8

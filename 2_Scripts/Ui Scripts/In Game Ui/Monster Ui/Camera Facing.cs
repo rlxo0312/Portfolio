@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 오브젝트가 카메라를 바라보도록 회전 방향을 설정하는 클래스입니다.
-/// 지정된 축 기준으로 LookAt 처리하며, UI 요소나 월드 공간 텍스트 등에 사용됩니다.
+/// 오브젝트가 카메라를 바라보도록 회전 방향을 설정하는 클래스
+/// 지정된 축 기준으로 LookAt 처리하며, UI 요소나 월드 공간 텍스트 등에 사용
 /// <para>사용 변수: public Camera refCamera, public bool reverseFace, public Axis axis</para>
 /// </summary>
 public class CameraFacing : MonoBehaviour

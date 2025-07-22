@@ -174,8 +174,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler, IBeginDragHandler, IEn
         if(quantityText != null)
         {
             quantityText.text = string.Empty;
-            //quantityText.SetText("");
-        }
+            //quantityText.SetText("");            
+        }        
     }
 
     /// <summary>
@@ -189,7 +189,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler, IBeginDragHandler, IEn
 
         if(poolObj != null)
         {
-            item.pooledObj = poolObj;
+            item.pooledObj = poolObj;            
         }
         if (item != null && !item.linkedSlots.Contains(this))
         {

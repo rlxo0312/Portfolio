@@ -47,4 +47,4 @@ MonoBehaviour:
   targetCount: 8
   targetCountDuration: 2
   isUseMP: 1
-  useMPAmount: 20
+  useMPAmount: 50

@@ -9,6 +9,7 @@ using UnityEngine;
 /// <para>사용 변수</para>
 /// <para>public Stat[] stats</para>
 /// <para>public float MaxHP, MaxMP, AttackPower, Defense</para>
+/// <para>public float defaultSpeed, runSpeed, jumpForce, backSpeed, fastBackSpeed</para>
 /// <para>public Action&lt;PlayerData&gt; ChangedStats</para>
 ///
 /// <para>스탯 조회 및 설정</para>
@@ -40,6 +41,12 @@ public class PlayerData : ScriptableObject
     [Header("방어율(&) 최대 90%까지")]
     [Range(0,90)]
     public float Defense;
+
+    public float defaultSpeed;
+    public float runSpeed;
+    public float jumpForce;
+    public float backSpeed;
+    public float fastBackSpeed;
 
     public Action<PlayerData> ChangedStats;
 #if UNITY_EDITOR

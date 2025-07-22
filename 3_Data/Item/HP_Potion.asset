@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ca417701c0b464fbda19ace72c2d4a, type: 3}
   m_Name: HP_Potion
   m_EditorClassIdentifier: 
-  itemName: "HP\uD68C\uBCF5 \uD3EC\uC158"
+  itemName: "HP\uD68C\uBCF5\uD3EC\uC158"
   itemKey: Potion_0001
+  itemAdress: HP_Potion
   itemPrefab: {fileID: 2718978543364056572, guid: 4e0296f27c4a8d1468390bafdfc409c3,
     type: 3}
   itemSprite: {fileID: 21300000, guid: 3c1a17a61142d69568169110d9b82a9e, type: 3}

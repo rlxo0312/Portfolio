@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: "\uAC80"
   itemKey: Weapon_0001
+  itemAdress: LongSword
   itemPrefab: {fileID: 4334314812708720168, guid: edccbf15fadd9704cb7a2020a492b120,
     type: 3}
   itemSprite: {fileID: 21300000, guid: 13f67212e16df154c95b32110023ff13, type: 3}
@@ -23,3 +24,10 @@ MonoBehaviour:
   maxStack: 1
   itemInfo: "\uB0A0\uC774 \uBC14\uB79C \uAC80\uC774\uB2E4 \uC81C\uAC12\uC744 \uBC1B\uAE34
     \uD798\uB4E4 \uAC83 \uAC19\uB2E4."
+  recoveryHP: 0
+  recoveryMP: 0
+  recoveryItemEffect: {fileID: 0}
+  itemEffectPos: {x: 0, y: 0, z: 0}
+  startItemEffectDuration: 0
+  itemEffectDuration: 0
+  itemPoolKey: 

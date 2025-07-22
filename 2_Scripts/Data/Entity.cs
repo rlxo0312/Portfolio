@@ -26,6 +26,7 @@ public class Entity : MonoBehaviour, IDamageable
     public float AttackPower;
     public float Defense;
 
+    public bool isLoadData = false;
     [Header("몬스터의 무적 가능 여부")]
     [SerializeField] public bool isInvincibility = false;
     public bool IsInvincibility => isInvincibility;
@@ -54,8 +55,11 @@ public class Entity : MonoBehaviour, IDamageable
     /// </summary>
     private void OnInitalize() //시작시 초기화 
     {
-        HP = MaxHP; 
-        MP = MaxMP;
+        if (!isLoadData)
+        {
+            HP = MaxHP; 
+            MP = MaxMP;            
+        }
     }
     public virtual void OnLoadComponents()
     {

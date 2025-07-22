@@ -1,0 +1,7 @@
+﻿PlayerPosition ,posX: 104.5097, posY: 0.1299999, posZ: 82.74383
+PlayerStat, (MaxHP:300/HP:300), (MaxMP:100/MP:90),AttackPower:30, Defense:10
+PlayerMove, 기본 이동속도:5, 달리기 속도:70, 후방이동 속도:3,후방 달리기 속도:8, 점프력:20
+
+-Inventory Items-
+
+-slotItems-

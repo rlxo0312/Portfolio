@@ -9,9 +9,10 @@ using UnityEngine;
 /// <para>public void LoadSlots()</para>
 /// <para>public bool AddItemSlots(Item_Data item_Data, GameObject poolObj), HasEmptySlot()</para>
 /// <para>public InventorySlot FindStackableSlot(Item_Data data),  GetEmptySlot()</para>
+/// <para>public void AssignItemToSlotAtIndex(int index, Item_Data data, GameObject poolObj, int quantity)</para>
 /// <para>private void LogEmptySlotCount()</para>
 /// </summary>
-public class InventorySlotManager : MonoBehaviour
+public class InventorySlotManager  : MonoBehaviour
 {
     public List<InventorySlot> slotList = new List<InventorySlot>();
 
@@ -122,6 +123,25 @@ public class InventorySlotManager : MonoBehaviour
         }
 
         return false;       
+    }   
+    /// <summary>
+    /// json 데이터 저장을 위한 메서드
+    /// </summary>
+    /// <param name="index"></param>
+    /// <param name="data"></param>
+    /// <param name="poolObj"></param>
+    /// <param name="quantity"></param>
+    public void AssignItemToSlotAtIndex(int index, Item_Data data, GameObject poolObj, int quantity)
+    {
+        if(index < 0 || index >=slotList.Count)
+        {
+            return; 
+        }
+        var slot = slotList[index]; 
+        if(slot != null)
+        {
+            slot.SetItem(poolObj, new InventoryItem(data, quantity));
+        }
     }    
     /// <summary>
     /// 현재 인벤토리에서 비어 있는 슬롯의 개수를 계산하여 로그로 출력함

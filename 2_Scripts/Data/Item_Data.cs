@@ -5,7 +5,7 @@ using UnityEngine;
 /// 아이템 데이터를 생성하는 scriptableobject
 /// 
 /// <para>사용 변수</para>
-/// <para> public string itemName, itemKey, itemInfo</para> 
+/// <para> public string itemName, itemKey, itemAdress, itemInfo</para> 
 /// <para> public int maxStacki</para>
 /// <para> public GameObject itemPrefab</para>
 /// <para> public Sprite itemSprite</para>
@@ -16,6 +16,8 @@ public class Item_Data : ScriptableObject
 {
     public string itemName;
     public string itemKey;
+    [Header("Adressable key 이름은 scriptableObject명과 동일하게")]
+    public string itemAdress;
     public GameObject itemPrefab;
     public Sprite itemSprite;
     public bool isStackable = true;

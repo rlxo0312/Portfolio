@@ -55,7 +55,7 @@ public class PlayerInGameUi : MonoBehaviour
     /// </summary>
     private void OnChAngedValue()
     {
-        hpSlider.value = (float)playerManager.HP / (float)playerManager.MaxHP;
-        mpSlider.value = (float)playerManager.MP / (float)playerManager.MaxMP;          
+        hpSlider.value = ((float)playerManager.HP / (float)playerManager.MaxHP);
+        mpSlider.value = ((float)playerManager.MP / (float)playerManager.MaxMP);          
     }
 }

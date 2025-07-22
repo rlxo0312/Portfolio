@@ -21,18 +21,20 @@ namespace CameraSetting
     /// <para>HandleAttackAction() - 기본 공격 처리</para>
     /// <para>HandleComboAttack() - 콤보 공격 트리거</para>
     /// <para>HandleDefenceInput() - 방어 애니메이션 처리</para>
+    /// <para>private void InitPlayerSpeed()</para>
     /// </summary>
     [RequireComponent(typeof(CharacterController))]
     public class PlayerMove : MonoBehaviour
     {
         //PlayerManager playerManager;
         PlayerManagerReference playerManagerRef;
+        public PlayerData playerData;
         [Header("플레이어 움직임 제어 변수")]
-        [SerializeField] private float playerSpeed;
-        [SerializeField] private float runSpeed;
-        [SerializeField] private float jumpForce;
-        [SerializeField] private float backSpeed;
-        [SerializeField] private float faseBackSpeed;
+        public float playerSpeed;
+        public float runSpeed;
+        public float jumpForce;
+        public float backSpeed;
+        public float fastBackSpeed;
 
         private bool isSeat = true;
         public bool IsSeat => isSeat;
@@ -77,6 +79,7 @@ namespace CameraSetting
         // Start is called before the first frame update
         void Start()
         {
+            InitPlayerSpeed();
             characterController = GetComponent<CharacterController>();
             playerAnimator = GetComponentInChildren<Animator>();
             characterController.enabled = true;
@@ -93,6 +96,17 @@ namespace CameraSetting
             {
                 HandleComboAttack();
             }
+        }
+        /// <summary>
+        /// 게임 시작시에 플레이어 이동관련 데이터(defaultSpeed, runSpeed, jumpForce, backSpeed, fastBackSpeed)를 초기화 
+        /// </summary>
+        private void InitPlayerSpeed()
+        {
+            playerSpeed = playerData.defaultSpeed;
+            runSpeed = playerData.runSpeed;
+            jumpForce = playerData.jumpForce;   
+            backSpeed = playerData.backSpeed;   
+            fastBackSpeed = playerData.fastBackSpeed;
         }
         /// <summary>
         /// 지면 감지 및 애니메이터에 Ground 상태를 반영합니다.
@@ -149,7 +163,7 @@ namespace CameraSetting
             if(Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift))
             {
 
-                activeMoveSpeed = faseBackSpeed;
+                activeMoveSpeed = fastBackSpeed;
                 playerAnimator.SetBool("IsBackFast", true);
                 playerManagerRef.PlayerManager.playerAudioManager.RunStepSFX();
                 moveAmount = -0.4f;

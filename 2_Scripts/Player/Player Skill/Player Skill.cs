@@ -77,6 +77,16 @@ public class PlayerSkill
             return;
         }
 
+        if(playerSkillData.isUseMP && playerSkillData.useMPAmount >= 0f)
+        {
+            bool useMP = UseMP(playerSkillData, playerManager);
+
+            if(!useMP)
+            {
+                Debug.Log("[PlayerSkill] MP 부족으로 스킬 발동 중단");
+                return;
+            }
+        }
         lastUseTime = Time.time;
         skillUi.StartCooldown(playerSkillData.skillColldown);
 
@@ -108,10 +118,10 @@ public class PlayerSkill
         
         if(playerManager != null && caller != null) 
         {
-            if(playerSkillData.isUseMP == true && playerSkillData.useMPAmount > 0f)
+            /*if(playerSkillData.isUseMP == true && playerSkillData.useMPAmount > 0f)
             {
                 UseMP(playerSkillData, playerManager);
-            }
+            }*/
             if(playerSkillData.playerAttackSkillDuration > 0f && playerSkillData.playerBonusAttackPower > 0f)
             {
                 caller.StartCoroutine(ApplyAttackSkillBuff(playerSkillData, playerManager));
@@ -246,7 +256,7 @@ public class PlayerSkill
             {
                 //Quaternion prefabRotation = data.skillEffect.transform.rotation;
                 //spawnRotate = pos.rotation * Quaternion.Euler(playerManager.transform.forward);
-                Quaternion lookRotate = Quaternion.LookRotation(playerManager.transform.forward);
+                Quaternion lookRotate = Quaternion.LookRotation(playerManager.transform.forward);                
                 spawnRotate = lookRotate * prefabRotation;
             }
             else
@@ -526,20 +536,27 @@ public class PlayerSkill
     /// </summary>
     /// <param name="data"></param>
     /// <param name="player"></param>
-    private void UseMP(PlayerSkillData data, PlayerManager player)
+    private bool UseMP(PlayerSkillData data, PlayerManager player)
     {
         float beforeMP = player.MP; 
         if(player.MP < data.useMPAmount)
         {
             Debug.Log($"[PlayerSkill]MP가 {data.useMPAmount - beforeMP} 부족 ");
-            return; 
-        }
-        else
-        {
-            player.MP -= data.useMPAmount;
-            Debug.Log($"[PlayerSkill]MP사용:{data.useMPAmount}, 남은 MP:{player.MP - data.useMPAmount}");
             player.OnChangerStats?.Invoke();
+            return false; 
         }
+
+        if(player.MP == 0)
+        {
+            Debug.Log($"[PlayerSkill]MP가 없습니다.{player.MP}");
+            player.playerInGameUi.mpSlider.value = 0;
+            return false;
+        }
+       
+        player.MP -= data.useMPAmount;
+        Debug.Log($"[PlayerSkill]MP사용:{data.useMPAmount}, 남은 MP:{player.MP - data.useMPAmount}");
+        player.OnChangerStats?.Invoke();
+        return true;
     }
     
     public KeyCode GetKey() => key;

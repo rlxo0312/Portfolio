@@ -1,0 +1,18 @@
+{
+    "posX": 104.50969696044922,
+    "posY": 0.12999987602233888,
+    "posZ": 82.74382781982422,
+    "maxHP": 300.0,
+    "maxMP": 100.0,
+    "hp": 300.0,
+    "mp": 90.0,
+    "attackPower": 30.0,
+    "defense": 10.0,
+    "speed": 5.0,
+    "runSpeed": 70.0,
+    "jumpForce": 20.0,
+    "backSpeed": 3.0,
+    "fastBackSpeed": 8.0,
+    "inventoryItems": [],
+    "slotItems": []
+}

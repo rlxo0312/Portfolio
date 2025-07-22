@@ -24,7 +24,8 @@ public class Inventory : MonoBehaviour
     /// <param name="poolObj">추가 될 아이템 프리팹</param>
     /// <returns></returns>
     public bool AddItem(Item_Data item, GameObject poolObj, int amount = 1)
-    {        
+    {
+        //Debug.Log($"[AddItem] 아이템: {item.itemName}, 수량: {amount}");
         if (inventorySlotManager == null)
         {
             Debug.Log("[Inventory] slotManager가 연결되어 있지 않습니다.");
